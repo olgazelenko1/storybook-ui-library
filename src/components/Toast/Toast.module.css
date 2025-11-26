@@ -1,0 +1,55 @@
+.toast {
+  display: inline-block;
+  padding: 12px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  color: #0b1226;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
+  transform: translateY(0);
+  opacity: 1;
+  font-size: 14px;
+}
+
+.hide {
+  transform: translateY(-8px);
+  opacity: 0;
+}
+
+.info {
+  background: #e6f0ff;
+}
+.success {
+  background: #daf5e6;
+}
+.error {
+  background: #fdecea;
+}
+
+.container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* viewport to position toast(s) in bottom-right */
+.viewport {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}

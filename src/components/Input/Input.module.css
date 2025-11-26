@@ -1,0 +1,48 @@
+.inputWrapper {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 36px 8px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+.iconButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #333;
+}
+
+.toggleButton {
+  right: 36px;
+}
+
+.clearButton {
+  right: 8px;
+}
+.input:focus-visible {
+  outline: 3px solid rgba(0, 112, 243, 0.18); /* м'який синій контур */
+  outline-offset: 2px;
+}
+
+/* для кнопок іконок */
+.iconButton:focus-visible {
+  outline: 2px solid rgba(0, 112, 243, 0.18);
+  border-radius: 4px;
+}
