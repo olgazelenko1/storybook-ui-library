@@ -43,15 +43,9 @@ Storybook відкриється у браузері (зазвичай http://lo
 
 ### SidebarMenu (open, closed, nested)
 
-![Sidebar Open](screenshots/sidebar-open.png)
-![Sidebar Closed](screenshots/sidebar-closed.png)
-![Sidebar Nested](screenshots/sidebar-nested.png)
-
-### Storybook UI
-
-![Storybook UI](/assets/screenshots/SidebarMenu/SideBar%20close.png)
-![Storybook UI Open](/assets/screenshots/SidebarMenu/SideBar%20Open.png)
-![Storybook UI Open](/assets/screenshots/SidebarMenu/SideBar%20open1.png)
+![Sidebar Open](/assets/screenshots/SidebarMenu/SideBar%20close.png)
+![Sidebar Closed](/assets/screenshots/SidebarMenu/SideBar%20Open.png)
+![Sidebar Nested](/assets/screenshots/SidebarMenu/SideBar%20open1.png)
 
 ⚙️ Розробка
 TypeScript, ESLint, CSS Modules
@@ -60,6 +54,3 @@ Storybook для документації та тестування
 
 📚 Storybook
 Всі компоненти мають окремі сторіси з різними конфігураціями
-
-📝 Ліцензія
-MIT
