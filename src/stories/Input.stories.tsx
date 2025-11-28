@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import React from 'react';
-
 import { Input } from '../components/Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'Input',
+  title: 'Components/Input',
   component: Input,
   tags: ['autodocs'],
 };
@@ -25,11 +24,18 @@ export const TextClearable: Story = {
   },
 };
 
+export const Password: Story = {
+  args: {
+    type: 'password',
+    placeholder: 'Enter password',
+  },
+};
+
 export const PasswordClearable: Story = {
   args: {
     type: 'password',
+    placeholder: 'Enter password',
     clearable: true,
-    placeholder: 'Password',
   },
 };
 

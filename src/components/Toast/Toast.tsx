@@ -6,7 +6,7 @@ export type ToastType = 'info' | 'success' | 'error';
 export interface ToastProps {
   message: string;
   type?: ToastType;
-  duration?: number; // ms
+  duration?: number;
   onClose?: () => void;
   closable?: boolean;
 }
@@ -47,22 +47,44 @@ const Toast: React.FC<ToastProps> = ({
         : styles.info;
 
   return (
-    <div className={styles.container} role="status" aria-live="polite">
+    <div className={styles.viewport}>
       <div
-        className={`${styles.toast} ${variantClass} ${!visible ? styles.hide : ''}`}
+        className={`${styles.toast} ${variantClass} ${
+          visible ? styles.show : styles.hide
+        }`}
+        role="status"
+        aria-live="polite"
       >
-        {message}
+        <span className={styles.message}>{message}</span>
+        {closable && (
+          <button
+            className={styles.closeButton}
+            aria-label="Close toast"
+            onClick={handleClose}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <line
+                x1="6"
+                y1="6"
+                x2="18"
+                y2="18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <line
+                x1="6"
+                y1="18"
+                x2="18"
+                y2="6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        )}
       </div>
-      {closable && (
-        <button
-          className={styles.closeButton}
-          aria-label="Close toast"
-          type="button"
-          onClick={handleClose}
-        >
-          ❌
-        </button>
-      )}
     </div>
   );
 };

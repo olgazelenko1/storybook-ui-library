@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+React UI Component Library
+Бібліотека багаторазових React-компонентів з інтерактивною документацією на Storybook.
 
-## Getting Started
+🚀 Швидкий старт
+Встановлення залежностей
+Запуск Storybook
+Storybook відкриється у браузері (зазвичай http://localhost:6006/).
 
-First, run the development server:
+Збірка бібліотеки
+📦 Структура проєкту
+🧩 Компоненти
+📥 Input
+Типи: text, password (з перемикачем видимості), number
+Проп clearable — кнопка очищення
+Демо-сторіси: різні типи, з/без очищення, контрольований варіант
+🔔 Toast
+Відображається у правому нижньому куті
+Автоматичне закриття через заданий час
+Варіанти: info, success, error
+Можна закрити вручну
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📚 SidebarMenu
+Виїжджає справа
+Підтримує вкладені підменю (акордеон)
+Закривається при кліку на фон
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🖼️ Скріншоти
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Input (text, password, clearable)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Input Text](/assets/screenshots/Input/Input.png)
+![Input Password](/assets/screenshots/Input/Password%20close.png)
+![Input Clearable](/assets/screenshots/Input/Password%20clear.png)
+![Input Password show](/assets/screenshots/Input/Password%20show.png)
+![Input Number](/assets/screenshots/Input/Number%20example.png)
+![Input Controlled](/assets/screenshots/Input/Controlled.png)
 
-## Learn More
+### Toast (info, success, error)
 
-To learn more about Next.js, take a look at the following resources:
+![Toast Info](/assets/screenshots/Toast/Toast%20info.png)
+![Toast Success](/assets/screenshots/Toast/Toast%20success.png)
+![Toast Error](/assets/screenshots/Toast/Toast%20error.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### SidebarMenu (open, closed, nested)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Sidebar Open](screenshots/sidebar-open.png)
+![Sidebar Closed](screenshots/sidebar-closed.png)
+![Sidebar Nested](screenshots/sidebar-nested.png)
 
-## Deploy on Vercel
+### Storybook UI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Storybook UI](/assets/screenshots/SidebarMenu/SideBar%20close.png)
+![Storybook UI Open](/assets/screenshots/SidebarMenu/SideBar%20Open.png)
+![Storybook UI Open](/assets/screenshots/SidebarMenu/SideBar%20open1.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚙️ Розробка
+TypeScript, ESLint, CSS Modules
+Storybook для документації та тестування
+Без сторонніх UI-бібліотек
+
+📚 Storybook
+Всі компоненти мають окремі сторіси з різними конфігураціями
+
+📝 Ліцензія
+MIT

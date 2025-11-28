@@ -1,55 +1,63 @@
-.toast {
-  display: inline-block;
-  padding: 12px 14px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  color: #0b1226;
-  transition:
-    transform 220ms ease,
-    opacity 220ms ease;
-  transform: translateY(0);
-  opacity: 1;
-  font-size: 14px;
+.viewport {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  z-index: 9999;
 }
 
-.hide {
-  transform: translateY(-8px);
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 250px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: #fff;
   opacity: 0;
+  transform: translateX(100%);
+  transition:
+    opacity 0.22s,
+    transform 0.22s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast.hide {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .info {
-  background: #e6f0ff;
+  background-color: #0070f3;
 }
 .success {
-  background: #daf5e6;
+  background-color: #28a745;
 }
 .error {
-  background: #fdecea;
+  background-color: #dc3545;
 }
 
-.container {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+.message {
+  flex: 1;
 }
 
 .closeButton {
-  background: transparent;
+  background: none;
   border: none;
   padding: 4px;
-  margin-left: 8px;
   cursor: pointer;
-  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* viewport to position toast(s) in bottom-right */
-.viewport {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
+.closeButton svg {
+  pointer-events: none;
 }

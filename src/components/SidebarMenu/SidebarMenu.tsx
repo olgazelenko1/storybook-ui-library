@@ -1,8 +1,5 @@
-(function () {
-  // Minimal SidebarMenu implementation
-})();
-
-import React from 'react';
+import React, { useState } from 'react';
+import './SidebarMenu.module.css';
 
 export interface MenuItem {
   id: string;
@@ -21,44 +18,47 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
   isOpen = true,
   onClose,
 }) => {
+  const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
+
+  const toggleItem = (id: string) => {
+    setOpenItems((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        right: 0,
-        top: 0,
-        bottom: 0,
-        width: 300,
-        background: '#fff',
-        borderLeft: '1px solid #eee',
-        padding: 16,
-        overflow: 'auto',
-      }}
-    >
-      <button onClick={onClose} style={{ marginBottom: 12 }}>
-        Close
-      </button>
-      <nav>
-        <ul style={{ paddingLeft: 0 }}>
-          {items.map((it) => (
-            <li key={it.id} style={{ listStyle: 'none', marginBottom: 8 }}>
-              <div>{it.label}</div>
-              {it.children && (
-                <ul style={{ paddingLeft: 12 }}>
-                  {it.children.map((c) => (
-                    <li key={c.id} style={{ listStyle: 'none' }}>
-                      {c.label}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <>
+      {/* Backdrop */}
+      <div className="backdrop" onClick={onClose} />
+
+      {/* Sidebar */}
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <button className="closeButton" onClick={onClose}>
+          Close
+        </button>
+        <nav>
+          <ul className="menuList">
+            {items.map((it) => (
+              <li key={it.id} className="menuItem">
+                <div
+                  className={it.children ? 'expandable' : ''}
+                  onClick={() => it.children && toggleItem(it.id)}
+                >
+                  {it.label}
+                </div>
+                {it.children && openItems[it.id] && (
+                  <ul className="subMenu">
+                    {it.children.map((c) => (
+                      <li key={c.id}>{c.label}</li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </>
   );
 };
 
